@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+echo "This will setup programmer-dvorak on this system as the only keyboard layout"
 # First install the layout
 cat ~/Downloads/Programmer\ Dvorak\ v1.2.pkg/Contents/Archive.pax.gz |\
  gunzip | ( cd / && sudo cpio --quiet -R root:admin -idm ./Library/Keyboard\ Layouts/Programmer\ Dvorak.bundle )	
@@ -25,3 +26,5 @@ done
 
 # Now set it as the login layout
 sudo cp ~/Library/Preferences/com.apple.HIToolbox.plist /Library/Preferences/
+
+echo "You should restart your system now"
